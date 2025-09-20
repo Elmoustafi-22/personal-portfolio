@@ -2,19 +2,9 @@ import React, { useState } from 'react';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-  };
-
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-    if (isDarkMode) {
-      document.documentElement.classList.remove('dark');
-    } else {
-      document.documentElement.classList.add('dark');
-    }
   };
 
   return (
@@ -25,9 +15,6 @@ const Header: React.FC = () => {
           <a href="#projects" className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white">Projects</a>
           <a href="#skills" className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white">Skills</a>
           <a href="#contact" className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white">Contact</a>
-          <button type='button' onClick={toggleDarkMode} className="ml-4 px-4 py-2 bg-gray-800 text-white rounded-md">
-            {isDarkMode ? 'Light Mode' : 'Dark Mode'}
-          </button>
         </nav>
         <div className="md:hidden">
           <button type='button' title='hamburger' onClick={toggleMenu} className="text-gray-800 dark:text-white">
@@ -43,9 +30,6 @@ const Header: React.FC = () => {
             <a href="#projects" className="block text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white">Projects</a>
             <a href="#skills" className="block text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white">Skills</a>
             <a href="#contact" className="block text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white">Contact</a>
-            <button onClick={toggleDarkMode} className="w-full mt-2 px-4 py-2 bg-gray-800 text-white rounded-md">
-              {isDarkMode ? 'Light Mode' : 'Dark Mode'}
-            </button>
           </nav>
         </div>
       )}
